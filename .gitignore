@@ -1,0 +1,18 @@
+# Data
+data/
+
+# Logs
+logs/
+
+# Models
+models/
+
+# TensorBoard logs
+runs/
+
+# Python
+src/__pycache__/
+venv/
+
+# Utils
+utils/
