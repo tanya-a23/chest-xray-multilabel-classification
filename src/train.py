@@ -82,7 +82,7 @@ for epoch in range(EPOCHS):
             imgs = imgs.to(device)
             labels = labels.to(device)
 
-            optimizer.zero_grad()
+            optimizer.zero_grad() # clear old gradients
 
             with torch.set_grad_enabled(phase == 'train'):
                 outputs = model(imgs) # tensor of size BATCH_SIZE*14; values type: float
@@ -90,8 +90,8 @@ for epoch in range(EPOCHS):
                                                     # labels: tensor of size BATCH_SIZE*14; values are 0. and 1.
 
                 if phase == 'train':
-                    loss.backward()
-                    optimizer.step()
+                    loss.backward() # compute gradients
+                    optimizer.step() # update weights
 
             running_loss += loss.item() # float
             batch_acc = macro_accuracy(outputs.sigmoid().detach(), labels)
