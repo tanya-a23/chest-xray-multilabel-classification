@@ -23,3 +23,6 @@ python src/train.py
 5. Run evaluation:
 
 python src/eval.py
+
+## License
+This project is licensed under the MIT License.
